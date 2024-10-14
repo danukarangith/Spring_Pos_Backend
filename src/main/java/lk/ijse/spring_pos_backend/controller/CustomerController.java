@@ -3,12 +3,14 @@ package lk.ijse.spring_pos_backend.controller;
 import jakarta.validation.Valid;
 import lk.ijse.spring_pos_backend.customObj.CustomerResponse;
 import lk.ijse.spring_pos_backend.dto.CustomerDTO;
+import lk.ijse.spring_pos_backend.exception.CustomerNotFoundException;
 import lk.ijse.spring_pos_backend.exception.DataPersistFailedException;
 import lk.ijse.spring_pos_backend.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,5 +50,25 @@ public class CustomerController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<CustomerDTO> getAllCustomers() {
         return customerService.getAllCustomers();
+    }
+
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PatchMapping(value = "/{customerId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> updateCustomer(@Valid @RequestBody CustomerDTO customerDTO, @PathVariable("customerId") String customerId) {
+        if (customerDTO == null || customerId == null) {
+            return ResponseEntity.badRequest().build();
+        } else {
+            try {
+                customerService.updateCustomer(customerId, customerDTO);
+                logger.info("Customer updated : " + customerDTO);
+                return ResponseEntity.noContent().build();
+            } catch (CustomerNotFoundException e) {
+                return ResponseEntity.notFound().build();
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+                return ResponseEntity.internalServerError().build();
+            }
+        }
     }
 }
