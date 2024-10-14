@@ -25,5 +25,5 @@ public class CustomerEntity implements Serializable {
     private int mobile;
     private LocalDateTime lastUpdatedAt;
 //    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-//    private List<OrderEntity> orders;
+////    private List<OrderEntity> orders;
 }
