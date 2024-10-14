@@ -71,4 +71,17 @@ public class CustomerController {
             }
         }
     }
+    @DeleteMapping("/{customerId}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable("customerId") String customerId) {
+        try {
+            customerService.deleteCustomer(customerId);
+            logger.info("Customer deleted : " + customerId);
+            return ResponseEntity.noContent().build();
+        } catch (CustomerNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return ResponseEntity.internalServerError().build();
+        }
+    }
 }
