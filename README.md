@@ -33,14 +33,16 @@ Set up a MySQL database and update the application.properties file with your dat
 Run the Application
 
  ```bash
-Copy code
-./mvnw spring-boot:run
+ ./mvnw spring-boot:run
+
+ 
 Test the API
 
-Use the Postman link above to access the API documentation and test the endpoints.
-Project Structure
+ 
+**Use the Postman link above to access the API documentation and test the endpoints.
+Project Structure**
 perl
-Copy code
+ 
 spring-pos-backend/
 ├── src/
 │   ├── main/
