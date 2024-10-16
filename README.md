@@ -29,42 +29,9 @@ You can access the full API documentation and test the endpoints using the follo
    
 2. **Configure Database**
 
-Set up a MySQL database and update the application.properties file with your database details.
-Run the Application
+ Set up a MySQL database and create a new schema for the application.
 
- ```bash
- ./mvnw spring-boot:run
-
- 
-Test the API
-
- 
-**Use the Postman link above to access the API documentation and test the endpoints.
-Project Structure**
-perl
- 
-spring-pos-backend/
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/pos/   # Java source code
-│   │   └── resources/              # Configuration files
-├── pom.xml                         # Maven configuration
-└── README.md                       # Project documentation
-License
-This project is licensed under the MIT License.
-
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Contact
-For any issues, please reach out to your-email@example.com.
-
-less
-Copy code
-
-Replace `"https://github.com/your-username/spring-pos-backend.git"` and `"your-email@example.com"` with your actual GitHub repository URL and email address. The Postman link in the README directs users to the API documentation where they can test the endpoints directly.
-
-
-
-
+ 2. **Run the Application**
+       ```bash
+  ./mvnw spring-boot:run
 
