@@ -32,6 +32,5 @@ You can access the full API documentation and test the endpoints using the follo
  Set up a MySQL database and create a new schema for the application.
 
  2. **Run the Application**
-       ```bash
-  ./mvnw spring-boot:run
+       ```bash ./mvnw spring-boot:run
 
