@@ -36,6 +36,7 @@ You can access the full API documentation and test the endpoints using the follo
      This project is licensed under the MIT License.
 
 4. **Contributing**
+   
      Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 3. **contact**
