@@ -48,6 +48,7 @@ public class CustomerServiceIMPL implements CustomerService {
             tmpCustomer.get().setName(customerDTO.getFirstName() + " " + customerDTO.getLastName());
             tmpCustomer.get().setAddress(customerDTO.getAddress());
             tmpCustomer.get().setMobile(customerDTO.getMobile());
+            tmpCustomer.get().setEmail(customerDTO.getEmail());
             tmpCustomer.get().setLastUpdatedAt(DateTimeUtil.getCurrentDateTime());
             System.out.println("Customer updated : " + customerDTO);
         }
