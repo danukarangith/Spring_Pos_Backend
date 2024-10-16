@@ -26,12 +26,13 @@ You can access the full API documentation and test the endpoints using the follo
    ```bash
    git clone https://github.com/your-username/spring-pos-backend.git
    cd spring-pos-backend
-Configure Database
+   
+2. **Configure Database**
 
 Set up a MySQL database and update the application.properties file with your database details.
 Run the Application
 
-bash
+ ```bash
 Copy code
 ./mvnw spring-boot:run
 Test the API
